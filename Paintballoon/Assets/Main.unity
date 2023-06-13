@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 1337972546}
+  m_RaycastPrefab: {fileID: 0}
 --- !u!114 &388525034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388525029}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 719b6fbf418a01d44aea89b61081d572, type: 3}
   m_Name: 
@@ -483,12 +483,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ccf802be065d5414983b7790561a136f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ccf802be065d5414983b7790561a136f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ccf802be065d5414983b7790561a136f,
         type: 3}
@@ -545,6 +545,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PBboytest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ccf802be065d5414983b7790561a136f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccf802be065d5414983b7790561a136f, type: 3}
 --- !u!1 &1337972546 stripped
@@ -553,6 +558,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1185079193}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337972547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337972546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deaa35b3f0d86614b84f02ba92c0e02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0
