@@ -9,6 +9,8 @@ using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class PlaceObject : MonoBehaviour
 {
+    //set up raycasting and plane detection in AR and assigning a game object as a prefab to be instantiated when touched
+
     [SerializeField]
     private GameObject prefab;
 
@@ -16,12 +18,14 @@ public class PlaceObject : MonoBehaviour
     private ARPlaneManager aRPlaneManager;
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
-    private void Awake()
+    //intiatlise the ARRaycastManager and ARPlaneManager from attached GameObject
+   private void Awake()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
         aRPlaneManager = GetComponent<ARPlaneManager>();
     }
 
+    //respond to finger touch events
     private void OnEnable()
     {
         EnhancedTouch.TouchSimulation.Enable();
@@ -29,6 +33,7 @@ public class PlaceObject : MonoBehaviour
         EnhancedTouch.Touch.onFingerDown += FingerDown;
     }
 
+    //stop recieving touch events when the scene is not active
     private void OnDisable()
     {
         EnhancedTouch.TouchSimulation.Disable();
@@ -36,6 +41,10 @@ public class PlaceObject : MonoBehaviour
         EnhancedTouch.Touch.onFingerDown -= FingerDown;
     }
 
+    // This is the event handler for the touch input. When a finger is detected (index = 0), it checks if the ARRaycastManager detects a hit
+    // on the plane within the polygon using the current touch screen position. If a hit is detected, it loops through each
+    // ARRaycastHit and retrieves the hit pose (position and rotation) in the AR scene. It then instantiates the assigned prefab at that 
+    //pose. It also checks if the alignment of the plane is horizontal; if so, it makes the object face the camera.
     private void FingerDown(EnhancedTouch.Finger finger)
     {
         if (finger.index != 0) return;
