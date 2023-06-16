@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastManager: {fileID: 388525033}
-  spawnablePrefab: {fileID: 9146471693793754290, guid: 88de24272ce2f6a4fbc0ddd7a53e154a,
+  spawnablePrefab: {fileID: 2499239753885482604, guid: 4b3378ceb4105ae42bf8d79f3a9d77ae,
     type: 3}
 --- !u!4 &1414901234
 Transform:
