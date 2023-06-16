@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 4776765576899091622, guid: 3738bd65ede154463b2c35064b9e5fdb,
     type: 3}
-  m_DetectionMode: -1
+  m_DetectionMode: 1
 --- !u!114 &388525033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastManager: {fileID: 388525033}
-  spawnablePrefab: {fileID: 2501165103504413861, guid: c13df47226e8309409ffe4f8068cf706,
+  spawnablePrefab: {fileID: 9146471693793754290, guid: 88de24272ce2f6a4fbc0ddd7a53e154a,
     type: 3}
 --- !u!4 &1414901234
 Transform:
