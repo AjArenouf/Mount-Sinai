@@ -63,7 +63,11 @@ public class SpawnableManager : MonoBehaviour
 
     private void SpawnPrefab(Vector3 spawnPosition)
     {
-        spawnedObject = Instantiate(spawnablePrefab, spawnPosition, Quaternion.identity);
+        if (spawnedObject == null)
+        {
+            spawnedObject = Instantiate(spawnablePrefab, spawnPosition, Quaternion.identity);
+        }
+        
     }
 }
 
