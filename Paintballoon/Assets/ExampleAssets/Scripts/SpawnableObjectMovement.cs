@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-public class SpawnableObjectMovement : MonoBehaviour
+public class SpawnableObjectMovement : MonoBehaviour {
 
-public float MovementSpeed = 1.0f;
-public float MovementRadius = 1.0f;
-private vector3 initialPosition;
-private float elapsedTime = 0.0f;
-    
-{
+    public float MovementSpeed = 1.0f;
+    public float MovementRadius = 1.0f;
+    private Vector3 initialPosition;
+    private float elapsedTime = 0.0f;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,3 +34,7 @@ private float elapsedTime = 0.0f;
         }
     }
 }
+
+
+
+    
