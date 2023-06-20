@@ -23,5 +23,18 @@ public class BoyMovement : MonoBehaviour
         Vector3 a = transform.position;
         Vector3 b = target.position;
         transform.position = Vector3.MoveTowards(a, b, speed);
+
+        Vector3 c = transform.position;
+        Vector3 d = target2.position;
+        transform.position = Vector3.MoveTowards(c, d, speed);
+
+        Vector3 e = transform.position;
+        Vector3 f = target3.position;
+        transform.position = Vector3.MoveTowards(e, f, speed);
+
+        Vector3 g = transform.position;
+        Vector3 h = target4.position;
+        transform.position = Vector3.MoveTowards(g, h, speed);
+
     }
 }
