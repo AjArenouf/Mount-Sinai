@@ -8,33 +8,34 @@ public class BoyMovement : MonoBehaviour
     public Transform target2;
     public Transform target3;
     public Transform target4;
-    public float t;
-    public float speed;
+    private Transform currentTarget;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentTarget = target;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 a = transform.position;
-        Vector3 b = target.position;
-        transform.position = Vector3.MoveTowards(a, b, speed);
+        float speed = 3f;
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
 
-        Vector3 c = transform.position;
-        Vector3 d = target2.position;
-        transform.position = Vector3.MoveTowards(c, d, speed);
+        if (transform.position == currentTarget.position)
+        {
+            if (currentTarget == target)
+                currentTarget = target2;
+            else if (currentTarget == target2)
+                currentTarget = target3;
+            else if (currentTarget == target3)
+                currentTarget = target4;
+            else if (currentTarget == target4)
+                currentTarget = target;
 
-        Vector3 e = transform.position;
-        Vector3 f = target3.position;
-        transform.position = Vector3.MoveTowards(e, f, speed);
-
-        Vector3 g = transform.position;
-        Vector3 h = target4.position;
-        transform.position = Vector3.MoveTowards(g, h, speed);
+        }
 
     }
 }
