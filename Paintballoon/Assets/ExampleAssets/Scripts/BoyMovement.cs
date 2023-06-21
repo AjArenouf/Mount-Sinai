@@ -20,7 +20,7 @@ public class BoyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = 3f;
+        float speed = 1f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
 
