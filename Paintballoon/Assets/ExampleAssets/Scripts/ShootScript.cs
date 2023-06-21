@@ -19,7 +19,7 @@ public class ShootScript : MonoBehaviour
     {
         GameObject BalloonInstantiated = Instantiate(paintballoon, arCamera.transform.position, arCamera.transform.rotation);
 
-        Vector3 impulse = new Vector3(0.0f, 0.0f, 100.0f);
+        Vector3 impulse = new Vector3(0.0f, 0.0f, 50.0f);
 
         BalloonInstantiated.GetComponent<Rigidbody>().AddRelativeForce(impulse, ForceMode.Impulse);
     }

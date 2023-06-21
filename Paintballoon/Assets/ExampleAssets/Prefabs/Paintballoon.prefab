@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1586230315783120203}
   - component: {fileID: 5534486170037006023}
   - component: {fileID: 5159912284365948469}
-  - component: {fileID: 2771736539618602714}
   m_Layer: 0
   m_Name: Paintballoon
   m_TagString: Untagged
@@ -130,15 +129,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!75 &2771736539618602714
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645618089875002370}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}

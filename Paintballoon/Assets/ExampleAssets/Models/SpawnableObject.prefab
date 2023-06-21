@@ -103,6 +103,7 @@ MonoBehaviour:
   target2: {fileID: 7999175392651303414, guid: 6fec0e310d9405242b275f272c598ebb, type: 3}
   target3: {fileID: 5968190076760681400, guid: 58c3f529c4ce2414b92a15896cddf66d, type: 3}
   target4: {fileID: 2953020379148950625, guid: 3c104081db31527439d9fad012080c22, type: 3}
+  player: {fileID: 1899417078715649754, guid: f8c9aad7c28fd1e49b3229674014ae0e, type: 3}
 --- !u!64 &4585171944678489729
 MeshCollider:
   m_ObjectHideFlags: 0
