@@ -138,7 +138,7 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 8708580854486071424}
   shootInterval: 2
-  projectileSpeed: 10
+  projectileSpeed: 15
 --- !u!1001 &712745863174115163
 PrefabInstance:
   m_ObjectHideFlags: 0

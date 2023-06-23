@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7892943444104092489}
   - component: {fileID: 5806510199768136890}
   - component: {fileID: 1586230315783120203}
-  - component: {fileID: 5534486170037006023}
   - component: {fileID: 5159912284365948469}
   m_Layer: 0
   m_Name: Paintballoon
@@ -99,20 +98,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &5534486170037006023
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645618089875002370}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5159912284365948469
 Rigidbody:
   m_ObjectHideFlags: 0
