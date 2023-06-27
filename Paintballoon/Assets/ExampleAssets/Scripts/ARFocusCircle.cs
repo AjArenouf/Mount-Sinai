@@ -96,9 +96,18 @@ public class ARFocusCircle : MonoBehaviour
             }
         }
 
-        virtual_objects[objIndex].SetActive(true);
+        GameObject parentObject = Instantiate(virtual_objects[objIndex]);
+
+        
         virtual_objects[objIndex].transform.position = placementPose.position;
         virtual_objects[objIndex].transform.rotation = placementPose.rotation;
+
+        parentObject.SetActive(true);
+        
+        foreach(Transform child in parentObject.transform)
+        {
+            child.SetParent(parentObject.transform);
+        }
     }
 
 
