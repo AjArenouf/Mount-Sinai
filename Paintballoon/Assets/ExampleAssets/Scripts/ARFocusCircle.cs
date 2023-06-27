@@ -28,7 +28,7 @@ public class ARFocusCircle : MonoBehaviour
     private bool placementPoseIsValid = false;
 
     private bool placementIndicatorEnabled = true;
-
+    
     bool isUIHidden = false;
 
     void Start()
