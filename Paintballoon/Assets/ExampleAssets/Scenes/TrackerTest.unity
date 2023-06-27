@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 722835104}
-  - component: {fileID: 722835103}
+  - component: {fileID: 722835105}
   m_Layer: 0
   m_Name: ARFocusCircle
   m_TagString: Untagged
@@ -200,27 +200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &722835103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722835102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5752d2ae5fa2ed743a43abb68fd0ab1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virtual_objects:
-  - {fileID: 2140891626}
-  - {fileID: 3544335198740683078, guid: f72acdc8737e10d41ad4d74a05b3b911, type: 3}
-  - {fileID: 7999175392651303410, guid: 6fec0e310d9405242b275f272c598ebb, type: 3}
-  - {fileID: 5968190076760681404, guid: 58c3f529c4ce2414b92a15896cddf66d, type: 3}
-  - {fileID: 2953020379148950629, guid: 3c104081db31527439d9fad012080c22, type: 3}
-  buttons:
-  - {fileID: 1647247718}
-  placementIndicator: {fileID: 1399668039}
 --- !u!4 &722835104
 Transform:
   m_ObjectHideFlags: 0
@@ -236,6 +215,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722835105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722835102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5752d2ae5fa2ed743a43abb68fd0ab1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  object1: {fileID: 2140891626}
+  object2: {fileID: 3544335198740683078, guid: f72acdc8737e10d41ad4d74a05b3b911, type: 3}
+  object3: {fileID: 7999175392651303410, guid: 6fec0e310d9405242b275f272c598ebb, type: 3}
+  object4: {fileID: 5968190076760681404, guid: 58c3f529c4ce2414b92a15896cddf66d, type: 3}
+  object5: {fileID: 2953020379148950629, guid: 3c104081db31527439d9fad012080c22, type: 3}
+  button: {fileID: 1647247718}
+  placementIndicator: {fileID: 1399668039}
 --- !u!1 &1032030848
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,9 +828,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 722835103}
+      - m_Target: {fileID: 722835105}
         m_TargetAssemblyTypeName: ARFocusCircle, Assembly-CSharp
-        m_MethodName: PlaceObject
+        m_MethodName: SpawnAllObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
