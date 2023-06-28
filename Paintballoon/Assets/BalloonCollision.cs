@@ -6,9 +6,9 @@ public class BalloonCollision : MonoBehaviour
 {
     public GameObject canvasObject;
 
-    public void OnTriggerEnter(Collider other)
+     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Collider"))
+        if (other.gameObject.tag == "Collider" )
         {
             canvasObject.SetActive(true);
         }
