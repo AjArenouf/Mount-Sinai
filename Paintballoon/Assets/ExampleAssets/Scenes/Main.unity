@@ -566,7 +566,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566372447}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -822,6 +822,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SplattScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644597635054947165, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0, type: 3}
