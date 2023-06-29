@@ -142,6 +142,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4278882335493005967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &205160962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2314353101505577843, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4278882335493005967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205160960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &205160965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84855434ede21e643bf541dde80beae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasFader: {fileID: 4278882335493005973}
+  canvasElementFader: {fileID: 4278882335493005973}
 --- !u!1 &388525029
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +473,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &774916431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3208626549611574023, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4278882335493005967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &951753393
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,12 +884,12 @@ PrefabInstance:
     - target: {fileID: 2314353101505577843, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeCanvas
+      value: FadeElements
       objectReference: {fileID: 0}
     - target: {fileID: 2314353101505577843, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CanvasFader, Assembly-CSharp
+      value: CanvasElementFader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2314353101505577843, guid: 7d606d2ea0add0a4cbc7b1be97f7b2c0,
         type: 3}
@@ -907,7 +931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ca7d1ed2e953245a279fc8af64de46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
+  fadeDuration: 1
+  imageToFade: {fileID: 774916431}
+  buttonToFade: {fileID: 205160962}
 --- !u!114 &5434462552450501220
 MonoBehaviour:
   m_ObjectHideFlags: 0
