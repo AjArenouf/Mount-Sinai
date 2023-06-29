@@ -6,11 +6,27 @@ public class BalloonCollision : MonoBehaviour
 {
     public GameObject canvasObject;
 
-     void OnCollisionEnter(Collision collision)
+    private bool isCheckingCollisions = false; 
+
+     void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Collider" )
+        if (other.gameObject.tag == "Collider" )
+        {
+            if (!isCheckingCollisions)
+            {
+                StartCoroutine(CheckingCollisions());
+            }
+        }
+    }
+
+    IEnumerator CheckingCollisions()
+    {
+        isCheckingCollisions = true;
+
+        while (true)
         {
             canvasObject.SetActive(true);
+            yield return new WaitForSeconds(1f);
         }
     }
 }
