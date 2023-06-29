@@ -364,6 +364,7 @@ MonoBehaviour:
   paintballoon: {fileID: 3645618089875002370, guid: 287469b2bd9952948ba6a50fd180422d,
     type: 3}
   arCamera: {fileID: 22732920}
+  scoreText: {fileID: 2760926635178123894}
 --- !u!4 &589031482
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,17 +1007,17 @@ PrefabInstance:
     - target: {fileID: 970437472849914569, guid: 612aebb0a4251434e96278eb1fbb5310,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 970437472849914569, guid: 612aebb0a4251434e96278eb1fbb5310,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 970437472849914569, guid: 612aebb0a4251434e96278eb1fbb5310,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 970437472849914569, guid: 612aebb0a4251434e96278eb1fbb5310,
         type: 3}
@@ -1056,6 +1057,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2760926635178123892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2760926635178123894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6464202686281542597, guid: 612aebb0a4251434e96278eb1fbb5310,
+    type: 3}
+  m_PrefabInstance: {fileID: 2760926635178123892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4278882335493005967
 PrefabInstance:
   m_ObjectHideFlags: 0
