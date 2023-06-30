@@ -23,7 +23,7 @@ public class BoyMovement : MonoBehaviour
     void Update()
     {
         transform.LookAt(player.transform);
-        float speed = 1f;
+        float speed = 0.5f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
 
