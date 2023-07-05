@@ -8,8 +8,6 @@ public class ShootScript : MonoBehaviour
 {
     public GameObject paintballoon;
     public Camera arCamera;
-    int score;
-    public Text scoreText;
 
     private void Update()
     {
@@ -26,15 +24,5 @@ public class ShootScript : MonoBehaviour
 
         BalloonInstantiated.GetComponent<Rigidbody>().AddRelativeForce(impulse, ForceMode.Impulse);
     }
-    void OnTriggerEnter(Collider other)
-
-    {
-        if (other.gameObject.tag == "Spawnable")
-        {
-            score++;
-
-            scoreText.text = "Score:" + score;
-        }
-
-    }
+    
 }

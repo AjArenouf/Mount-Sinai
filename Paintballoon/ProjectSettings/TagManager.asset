@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnable
   - Collider
+  - PlayerBall
   layers:
   - Default
   - TransparentFX
