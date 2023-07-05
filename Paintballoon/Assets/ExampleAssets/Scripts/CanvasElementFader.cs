@@ -13,6 +13,43 @@ public class CanvasElementFader : MonoBehaviour
 
     private bool isFading = false;
 
+    private Color originalImageColor;
+    private Color originalButtonColor;
+    private Color originalTextColor;
+
+    public void RestoreElements()
+    {
+        if (isFading) return;
+
+        StartCoroutine(RestoreElementsCoroutine());
+    }
+
+    private IEnumerator RestoreElementsCoroutine()
+    {
+        isFading = true;
+
+        float elapsedTime = 0f;
+        Color startColor = new Color(originalImageColor.r, originalImageColor.g, originalImageColor.b, 0f);
+        Color targetColor = originalImageColor;
+
+        while(elapsedTime < fadeDuration)
+        {
+            float t = elapsedTime / fadeDuration;
+            imageToFade.color = Color.Lerp(startColor, targetColor, t);
+            buttonToFade.image.color = Color.Lerp(startColor, targetColor, t);
+            textToFade.color = Color.Lerp(startColor, targetColor, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        imageToFade.color = targetColor;
+        buttonToFade.image.color = targetColor;
+        textToFade.color = targetColor;
+
+        isFading = false;
+    }
+
    public void FadeElements()
     {
         if (isFading) return;
