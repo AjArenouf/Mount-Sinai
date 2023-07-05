@@ -21,7 +21,7 @@ public class PlayerScoreCount : MonoBehaviour
         {
             score++;
 
-            scoreText.text = "Score:" + score;
+            scoreText.text = "Your Score:" + score;
         }
     }
 }

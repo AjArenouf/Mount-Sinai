@@ -878,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632bec1596db03b4a9bcbe4ca14952d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 2760926635178123894}
+  scoreText: {fileID: 1037364475}
 --- !u!65 &1627316069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1336,18 +1336,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2760926635178123892}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2760926635178123894 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6464202686281542597, guid: 612aebb0a4251434e96278eb1fbb5310,
-    type: 3}
-  m_PrefabInstance: {fileID: 2760926635178123892}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4278882335493005967
 PrefabInstance:
   m_ObjectHideFlags: 0
