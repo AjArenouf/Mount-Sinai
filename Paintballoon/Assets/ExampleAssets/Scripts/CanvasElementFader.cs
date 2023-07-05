@@ -9,6 +9,7 @@ public class CanvasElementFader : MonoBehaviour
 
     public Image imageToFade;
     public Button buttonToFade;
+    public Text textToFade;
 
     private bool isFading = false;
 
@@ -32,6 +33,7 @@ public class CanvasElementFader : MonoBehaviour
             float t = elapsedTime / fadeDuration;
             imageToFade.color = Color.Lerp(startColor, targetColor, t);
             buttonToFade.image.color = Color.Lerp(startColor, targetColor, t);
+            textToFade.color = Color.Lerp(startColor, targetColor, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -39,6 +41,7 @@ public class CanvasElementFader : MonoBehaviour
 
         imageToFade.color = targetColor;
         buttonToFade.image.color = targetColor;
+        textToFade.color = targetColor;
 
         isFading = false;
     }
