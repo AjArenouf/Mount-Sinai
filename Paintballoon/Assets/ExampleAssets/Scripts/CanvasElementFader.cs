@@ -17,24 +17,19 @@ public class CanvasElementFader : MonoBehaviour
     private Color originalButtonColor;
     private Color originalTextColor;
 
-    public void RestoreElements()
+    private Color targetImageColor;
+    private Color targetButtonColor;
+    private Color targetTextColor;
+
+    private void Start()
     {
-        if (isFading = true) return;
+        originalImageColor = imageToFade.color;
+        originalButtonColor = buttonToFade.image.color;
+        originalTextColor = textToFade.color;
 
-        StartCoroutine(RestoreElementsCoroutine());
-    }
-
-    private IEnumerator RestoreElementsCoroutine()
-    {
-        isFading = true;
-
-        imageToFade.color = originalImageColor;
-        buttonToFade.image.color = originalButtonColor;
-        textToFade.color = originalTextColor;
-
-        yield return new WaitForSeconds(fadeDuration);
-
-        isFading = false;
+        targetImageColor = new Color(originalImageColor.r, originalImageColor.g, originalImageColor.b, 0f);
+        targetButtonColor = new Color(originalButtonColor.r, originalButtonColor.g, originalButtonColor.b, 0f);
+        targetTextColor = new Color(originalTextColor.r, originalTextColor.g, originalTextColor.b, 0f);
     }
 
    public void FadeElements()
@@ -66,6 +61,25 @@ public class CanvasElementFader : MonoBehaviour
         imageToFade.color = targetColor;
         buttonToFade.image.color = targetColor;
         textToFade.color = targetColor;
+
+        isFading = false;
+    }
+    public void ResetElements()
+    {
+        if (isFading) return;
+
+        StartCoroutine(RestoreElementsCoroutine());
+    }
+
+    private IEnumerator RestoreElementsCoroutine()
+    {
+        isFading = true;
+
+        imageToFade.color = originalImageColor;
+        buttonToFade.image.color = originalButtonColor;
+        textToFade.color = originalTextColor;
+
+        yield return new WaitForSeconds(fadeDuration);
 
         isFading = false;
     }

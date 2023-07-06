@@ -18,5 +18,13 @@ public class ButtonHandler : MonoBehaviour
     private void OnButtonClicked()
     {
         canvasElementFader.FadeElements();
+        StartCoroutine(ResetElements());
+    }
+
+    private IEnumerator ResetElements()
+    {
+        yield return new WaitForSeconds(canvasElementFader.fadeDuration);
+
+        canvasElementFader.ResetElements();
     }
 }
