@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OpponentScoreCount : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class OpponentScoreCount : MonoBehaviour
             score++;
 
             scoreText.text = "Opponent Score:" + score;
+
+            if (score >= 10)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
         }
     }
 }
