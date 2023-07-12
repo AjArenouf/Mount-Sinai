@@ -585,6 +585,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (Legacy)
       objectReference: {fileID: 0}
+    - target: {fileID: 935301195724629335, guid: d842defc95037274c9bb86b6883d7716,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 935301195724629335, guid: d842defc95037274c9bb86b6883d7716,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d842defc95037274c9bb86b6883d7716, type: 3}
 --- !u!224 &1335605139 stripped
@@ -669,7 +679,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -867,7 +877,7 @@ RectTransform:
   m_GameObject: {fileID: 2089899065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.98843724, y: 1.3757312, z: 0.9882416}
+  m_LocalScale: {x: 1.019976, y: 1.3757312, z: 0.9882416}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1827533326}
@@ -876,7 +886,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 82, y: -149}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089899067
 MonoBehaviour:

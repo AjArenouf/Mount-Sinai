@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class PlayerScoreCount : MonoBehaviour
 {
     int score;
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
      
 
     // Start is called before the first frame update
