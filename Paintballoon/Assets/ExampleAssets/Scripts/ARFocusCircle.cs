@@ -47,10 +47,10 @@ public class ARFocusCircle : MonoBehaviour
             UpdatePlacementIndicator();
         }
 
-        //if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        //{
-        //    PlaceObject();
-        //}
+        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            PlaceObject();
+        }
     }
 
     public void HideUI()
@@ -101,40 +101,40 @@ public class ARFocusCircle : MonoBehaviour
         PlaceObject();
     }
 
-        private void UpdatePlacementIndicator()
+    private void UpdatePlacementIndicator()
+    {
+        if (placementIndicator == null || placementPoseIsValid == false)
         {
-            if (placementPoseIsValid)
-            {
-                placementIndicator.SetActive(true);
-
-                Button[] buttons = FindObjectsOfType<Button>();
-
-                foreach (var button in buttons)
-                {
-                    button.gameObject.SetActive(true);
-                }
-
-                //scanText.SetActive(false);
-                //placeText.SetActive(true);
-
-                placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
-            }
-            else
+            if (placementIndicator != null)
             {
                 placementIndicator.SetActive(false);
+            }
 
-                Button[] buttons = FindObjectsOfType<Button>();
+            Button[] buttons = FindObjectsOfType<Button>();
 
-                foreach (var button in buttons)
-                {
-                    button.gameObject.SetActive(false);
-                }
-
-                //placeText.SetActive(false);
+            foreach (var button in buttons)
+            {
+                button.gameObject.SetActive(false);
             }
         }
+        else
+        {
+            if (placementIndicator != null)
+            {
+                placementIndicator.SetActive(true);
+                placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+            }
 
-        private void UpdatePlacementPose()
+            Button[] buttons = FindObjectsOfType<Button>();
+
+            foreach (var button in buttons)
+            {
+                button.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void UpdatePlacementPose()
         {
             var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
             var hits = new List<ARRaycastHit>();

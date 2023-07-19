@@ -32,12 +32,12 @@ public class CanvasElementFader : MonoBehaviour
         targetTextColor = new Color(originalTextColor.r, originalTextColor.g, originalTextColor.b, 0f);
     }
 
-   public void FadeElements()
+    public void FadeElements()
     {
         if (isFading) return;
 
         StartCoroutine(FadeElementsCoroutine());
-    }               
+    }
 
     private IEnumerator FadeElementsCoroutine()
     {
