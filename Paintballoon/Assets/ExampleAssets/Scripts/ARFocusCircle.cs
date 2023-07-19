@@ -28,8 +28,7 @@ public class ARFocusCircle : MonoBehaviour
     private bool placementPoseIsValid = false;
 
     private bool placementIndicatorEnabled = true;
-    
-    bool isUIHidden = false;
+   
 
     void Start()
     {
@@ -53,36 +52,6 @@ public class ARFocusCircle : MonoBehaviour
         }
     }
 
-    public void HideUI()
-    {
-        Button[] buttons = FindObjectsOfType<Button>();
-
-        if (isUIHidden == false)
-        {
-                foreach (var button in buttons)
-                {
-                    button.gameObject.SetActive(false);
-                }
-
-                placementIndicatorEnabled = false;
-                placementIndicator.SetActive(false);
-
-                isUIHidden = true;
-            }
-            else if (isUIHidden == true)
-            {
-                foreach (var button in buttons)
-                {
-                    button.gameObject.SetActive(true);
-                }
-
-                placementIndicatorEnabled = true;
-                placementIndicator.SetActive(true);
-
-                isUIHidden = false;
-            }
-        }
-
         public void PlaceObject()
         {
             GameObject[] virtualObjects = new GameObject[] { object1, object2, object3, object4, object5 };
@@ -103,36 +72,13 @@ public class ARFocusCircle : MonoBehaviour
 
     private void UpdatePlacementIndicator()
     {
-        if (placementIndicator == null || placementPoseIsValid == false)
+        if (placementIndicator != null && placementPoseIsValid)
         {
-            if (placementIndicator != null)
-            {
-                placementIndicator.SetActive(false);
-            }
-
-            Button[] buttons = FindObjectsOfType<Button>();
-
-            foreach (var button in buttons)
-            {
-                button.gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            if (placementIndicator != null)
-            {
-                placementIndicator.SetActive(true);
-                placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
-            }
-
-            Button[] buttons = FindObjectsOfType<Button>();
-
-            foreach (var button in buttons)
-            {
-                button.gameObject.SetActive(true);
-            }
+            placementIndicator.SetActive(true);
+            placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
         }
     }
+
 
     private void UpdatePlacementPose()
         {
