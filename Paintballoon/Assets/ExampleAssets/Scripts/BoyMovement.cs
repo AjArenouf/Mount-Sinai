@@ -9,7 +9,7 @@ public class BoyMovement : MonoBehaviour
     public Transform target3;
     public Transform target4;
     private Transform currentTarget;
-    public GameObject player;
+    
     
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class BoyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform);
+        
         float speed = 0.5f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);

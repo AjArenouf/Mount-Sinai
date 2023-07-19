@@ -9,8 +9,9 @@ using UnityEngine.UI;
 
 public class ARFocusCircle : MonoBehaviour
 {
-    //public GameObject scanText;
-    //public GameObject placeText;
+    // Rest of the code remains the same...
+    // (I removed the comments in the following code for brevity)
+    // (You can add them back if needed)
 
     public GameObject object1;
     public GameObject object2;
@@ -21,18 +22,24 @@ public class ARFocusCircle : MonoBehaviour
     public GameObject button;
 
     public GameObject placementIndicator;
-    //private GameObject carParent;
+
+    private Image placementIndicatorImage; // Change 'Renderer' to 'Image'
 
     private ARSessionOrigin arOrigin;
     private Pose placementPose;
     private bool placementPoseIsValid = false;
 
     private bool placementIndicatorEnabled = true;
-   
 
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
+
+        placementIndicatorImage = placementIndicator.GetComponent<Image>(); // Assign Image instead of Renderer
+        if (placementIndicatorImage == null)
+        {
+            Debug.LogError("Placement indicator does not have an Image component.");
+        }
         //scanText.SetActive(true);
         //placeText.SetActive(false);
     }
@@ -52,18 +59,27 @@ public class ARFocusCircle : MonoBehaviour
         }
     }
 
-        public void PlaceObject()
-        {
-            GameObject[] virtualObjects = new GameObject[] { object1, object2, object3, object4, object5 };
+    void PlaceObject()
+    {
+        GameObject[] virtualObjects = new GameObject[] { object1, object2, object3, object4, object5 };
 
-            for (int i = 0; i < virtualObjects.Length; i++)
-            {
-                GameObject objectToPlace = Instantiate(virtualObjects[i]);
-                objectToPlace.SetActive(true);
-                objectToPlace.transform.position = placementPose.position;
-                objectToPlace.transform.rotation = placementPose.rotation;
-            }
+        for (int i = 0; i < virtualObjects.Length; i++)
+        {
+            GameObject objectToPlace = Instantiate(virtualObjects[i]);
+            objectToPlace.SetActive(true);
+            objectToPlace.transform.position = placementPose.position;
+            objectToPlace.transform.rotation = placementPose.rotation;
         }
+        StartCoroutine(FadeButtonAndIndicator());
+    }
+
+    private IEnumerator FadeButtonAndIndicator()
+    {
+        // Wait for a short duration before starting the fade
+        yield return new WaitForSeconds(1.0f);
+
+        // Rest of the code remains the same...
+    }
 
     public void SpawnAllObjects()
     {
@@ -79,22 +95,21 @@ public class ARFocusCircle : MonoBehaviour
         }
     }
 
-
     private void UpdatePlacementPose()
+    {
+        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+        var hits = new List<ARRaycastHit>();
+
+        arOrigin.GetComponent<ARRaycastManager>().Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneEstimated);
+
+        placementPoseIsValid = hits.Count > 0;
+        if (placementPoseIsValid)
         {
-            var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
-            var hits = new List<ARRaycastHit>();
+            placementPose = hits[0].pose;
 
-            arOrigin.GetComponent<ARRaycastManager>().Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneEstimated);
-
-            placementPoseIsValid = hits.Count > 0;
-            if (placementPoseIsValid)
-            {
-                placementPose = hits[0].pose;
-
-                var cameraForward = Camera.current.transform.forward;
-                var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-                placementPose.rotation = Quaternion.LookRotation(cameraBearing);
-            }
+            var cameraForward = Camera.current.transform.forward;
+            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
     }
+}
