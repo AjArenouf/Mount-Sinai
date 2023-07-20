@@ -9,10 +9,6 @@ using UnityEngine.UI;
 
 public class ARFocusCircle : MonoBehaviour
 {
-    // Rest of the code remains the same...
-    // (I removed the comments in the following code for brevity)
-    // (You can add them back if needed)
-
     public GameObject object1;
     public GameObject object2;
     public GameObject object3;
@@ -53,10 +49,10 @@ public class ARFocusCircle : MonoBehaviour
             UpdatePlacementIndicator();
         }
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            PlaceObject();
-        }
+        //if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+       // {
+         //   PlaceObject();
+        //}
     }
 
     void PlaceObject()
@@ -70,15 +66,15 @@ public class ARFocusCircle : MonoBehaviour
             objectToPlace.transform.position = placementPose.position;
             objectToPlace.transform.rotation = placementPose.rotation;
         }
-        StartCoroutine(FadeButtonAndIndicator());
-    }
 
-    private IEnumerator FadeButtonAndIndicator()
-    {
-        // Wait for a short duration before starting the fade
-        yield return new WaitForSeconds(1.0f);
+        Image buttonImage = button.GetComponent<Image>();
+        buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0f);
 
-        // Rest of the code remains the same...
+        Image placementIndicatorImage = placementIndicator.GetComponent<Image>();
+        placementIndicatorImage.color = new Color(placementIndicatorImage.color.r, placementIndicatorImage.color.g, placementIndicatorImage.color.b, 0f);
+
+        button.SetActive(false);
+        placementIndicator.SetActive(false);
     }
 
     public void SpawnAllObjects()
