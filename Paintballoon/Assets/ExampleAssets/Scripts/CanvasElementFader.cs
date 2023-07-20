@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CanvasElementFader : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CanvasElementFader : MonoBehaviour
 
     public Image imageToFade;
     public Button buttonToFade;
-    public Text textToFade;
+    public TextMeshProUGUI textToFade;
 
     private bool isFading = false;
 
