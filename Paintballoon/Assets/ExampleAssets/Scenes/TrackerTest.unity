@@ -397,7 +397,7 @@ RectTransform:
   m_GameObject: {fileID: 371140953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.6264, y: 2.6264, z: 2.6264}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1667054918}
@@ -623,10 +623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   object1: {fileID: 259422730}
-  object2: {fileID: 3544335198740683078, guid: f72acdc8737e10d41ad4d74a05b3b911, type: 3}
-  object3: {fileID: 7999175392651303410, guid: 6fec0e310d9405242b275f272c598ebb, type: 3}
-  object4: {fileID: 5968190076760681404, guid: 58c3f529c4ce2414b92a15896cddf66d, type: 3}
-  object5: {fileID: 2953020379148950629, guid: 3c104081db31527439d9fad012080c22, type: 3}
   button: {fileID: 371140953}
   placementIndicator: {fileID: 1993206020}
 --- !u!1001 &785162674
@@ -746,7 +742,6 @@ MonoBehaviour:
   target2: {fileID: 234420531}
   target3: {fileID: 372696485}
   target4: {fileID: 1094679514}
-  player: {fileID: 1583579608}
 --- !u!114 &785162678
 MonoBehaviour:
   m_ObjectHideFlags: 0

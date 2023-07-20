@@ -10,10 +10,6 @@ using UnityEngine.UI;
 public class ARFocusCircle : MonoBehaviour
 {
     public GameObject object1;
-    public GameObject object2;
-    public GameObject object3;
-    public GameObject object4;
-    public GameObject object5;
 
     public GameObject button;
 
@@ -50,14 +46,14 @@ public class ARFocusCircle : MonoBehaviour
         }
 
         //if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-       // {
-         //   PlaceObject();
+        //{
+          //  PlaceObject();
         //}
     }
 
-    void PlaceObject()
+   public void PlaceObject()
     {
-        GameObject[] virtualObjects = new GameObject[] { object1, object2, object3, object4, object5 };
+        GameObject[] virtualObjects = new GameObject[] { object1 };
 
         for (int i = 0; i < virtualObjects.Length; i++)
         {
@@ -66,12 +62,6 @@ public class ARFocusCircle : MonoBehaviour
             objectToPlace.transform.position = placementPose.position;
             objectToPlace.transform.rotation = placementPose.rotation;
         }
-
-        Image buttonImage = button.GetComponent<Image>();
-        buttonImage.color = new Color(buttonImage.color.r, buttonImage.color.g, buttonImage.color.b, 0f);
-
-        Image placementIndicatorImage = placementIndicator.GetComponent<Image>();
-        placementIndicatorImage.color = new Color(placementIndicatorImage.color.r, placementIndicatorImage.color.g, placementIndicatorImage.color.b, 0f);
 
         button.SetActive(false);
         placementIndicator.SetActive(false);
