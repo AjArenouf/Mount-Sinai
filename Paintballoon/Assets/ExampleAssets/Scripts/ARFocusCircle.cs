@@ -64,7 +64,12 @@ public class ARFocusCircle : MonoBehaviour
         }
 
         button.SetActive(false);
-        placementIndicator.SetActive(false);
+        DestroyGameObject();
+    }
+
+    void DestroyGameObject()
+    {
+        Destroy(placementIndicator);
     }
 
     public void SpawnAllObjects()

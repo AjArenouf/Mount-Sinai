@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ExampleAssets/Scenes/StartScreen.unity
     guid: 63dd265acd6372f4bbee09ccbbadfa6d
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/Tutorial 1.unity
     guid: df59c089d2e96924caa09fe10256f366
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/Tutorial2.unity
     guid: 43bc24bf1d74d2d4cb84c39d45735225
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/Tutorial3.unity
     guid: 4550df49e30d46e4299ba7d60d8645c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/Tutorial4.unity
     guid: 3ba8f14d5dda92943940c46d8cedfa62
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/Tutorial5.unity
     guid: 2621c46f96722de468c7db3d82d412f3
   - enabled: 0
@@ -29,10 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ExampleAssets/Scenes/TrackerTest.unity
     guid: b91eb03578d70d742b912d059074ed3e
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/WinningScene.unity
     guid: c83bfff3542940f43832f8c8b557b93d
-  - enabled: 1
+  - enabled: 0
     path: Assets/ExampleAssets/Scenes/LoseScene.unity
     guid: ef6ecb7dbf6cbca47a831e68512952a7
   m_configObjects:
