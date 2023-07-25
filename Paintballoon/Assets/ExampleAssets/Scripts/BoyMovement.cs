@@ -40,5 +40,12 @@ public class BoyMovement : MonoBehaviour
 
         }
 
+        Vector3 directionToTarget = currentTarget.position - transform.position;
+
+        if (directionToTarget != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
+        }
     }
 }
