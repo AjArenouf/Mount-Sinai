@@ -47,11 +47,11 @@ public class ARFocusCircle : MonoBehaviour
 
         //if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         //{
-          //  PlaceObject();
+        //  PlaceObject();
         //}
     }
 
-   public void PlaceObject()
+    public void PlaceObject()
     {
         GameObject[] virtualObjects = new GameObject[] { object1 };
 
@@ -82,25 +82,41 @@ public class ARFocusCircle : MonoBehaviour
         if (placementIndicator != null && placementPoseIsValid)
         {
             placementIndicator.SetActive(true);
+            if (placementIndicatorImage != null)
+                placementIndicatorImage.enabled = true;
             placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+
+            Vector3 cameraPosition = Camera.current != null ? Camera.current.transform.position : arOrigin.camera.transform.position;
+            Vector3 lookAtCameraPosition = new Vector3(cameraPosition.x, placementPose.position.y, cameraPosition.z);
+            placementIndicator.transform.LookAt(lookAtCameraPosition);
+
+            // Optionally, make the placementIndicator remain upright (e.g., prevent rotation around the y-axis)
+            Vector3 indicatorEulerAngles = placementIndicator.transform.rotation.eulerAngles;
+            placementIndicator.transform.rotation = Quaternion.Euler(0f, indicatorEulerAngles.y, 0f);
         }
     }
 
     private void UpdatePlacementPose()
     {
-        var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+        var screenCenter = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0);
         var hits = new List<ARRaycastHit>();
 
-        arOrigin.GetComponent<ARRaycastManager>().Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneEstimated);
+        if (arOrigin.GetComponent<ARRaycastManager>() != null)
+        {
+            arOrigin.GetComponent<ARRaycastManager>().Raycast(screenCenter, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneEstimated);
+        }
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
         {
             placementPose = hits[0].pose;
 
-            var cameraForward = Camera.current.transform.forward;
-            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            if (Camera.current != null) // Check if the Camera.current is not null before accessing it
+            {
+                var cameraForward = Camera.current.transform.forward;
+                var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+                placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            }
         }
     }
 }
