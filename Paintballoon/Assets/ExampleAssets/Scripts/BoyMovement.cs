@@ -48,4 +48,5 @@ public class BoyMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
         }
     }
+
 }
