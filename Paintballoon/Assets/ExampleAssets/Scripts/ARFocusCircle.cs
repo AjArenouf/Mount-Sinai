@@ -53,15 +53,21 @@ public class ARFocusCircle : MonoBehaviour
 
     public void PlaceObject()
     {
-        GameObject[] virtualObjects = new GameObject[] { object1 };
 
-        for (int i = 0; i < virtualObjects.Length; i++)
-        {
-            GameObject objectToPlace = Instantiate(virtualObjects[i]);
-            objectToPlace.SetActive(true);
-            objectToPlace.transform.position = placementPose.position;
-            objectToPlace.transform.rotation = placementPose.rotation;
-        }
+        object1.transform.position = placementPose.position;
+        object1.transform.rotation = placementPose.rotation;
+        object1.SetActive(true);
+
+
+        //GameObject[] virtualObjects = new GameObject[] { object1 };
+
+        //for (int i = 0; i < virtualObjects.Length; i++)
+        //{
+        //    GameObject objectToPlace = Instantiate(virtualObjects[i]);
+        //    objectToPlace.SetActive(true);
+        //    objectToPlace.transform.position = placementPose.position;
+        //    objectToPlace.transform.rotation = placementPose.rotation;
+    
 
         button.SetActive(false);
         DestroyGameObject();
