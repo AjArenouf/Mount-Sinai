@@ -10,11 +10,14 @@ public class BoyMovement : MonoBehaviour
     public Transform target4;
     private Transform currentTarget;
 
+    Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         currentTarget = target;
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class BoyMovement : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
+            animator.SetBool("isColliding", true);
         }
     }
   
