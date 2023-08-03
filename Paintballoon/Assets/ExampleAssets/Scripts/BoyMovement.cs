@@ -9,8 +9,6 @@ public class BoyMovement : MonoBehaviour
     public Transform target3;
     public Transform target4;
     private Transform currentTarget;
-    
-    
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +46,5 @@ public class BoyMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
         }
     }
-
+  
 }

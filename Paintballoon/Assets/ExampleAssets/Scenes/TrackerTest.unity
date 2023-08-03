@@ -492,6 +492,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.437553e-15
       objectReference: {fileID: 0}
+    - target: {fileID: 1976345076178628752, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976345076178628752, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976345076178628753, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ThrowState
+      objectReference: {fileID: 0}
     - target: {fileID: 2080541851790845979, guid: 19dc73f6e0a00be43a959498ddecc29a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -566,6 +581,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 4.3003793
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791353819314003529, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ThrowState
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791353819314003534, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791353819314003534, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2794868705903328030, guid: 19dc73f6e0a00be43a959498ddecc29a,
         type: 3}
@@ -1047,6 +1077,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -7.0167083e-15
       objectReference: {fileID: 0}
+    - target: {fileID: 7009037269613730100, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009037269613730100, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009037269613730101, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ThrowState
+      objectReference: {fileID: 0}
     - target: {fileID: 7477198915273031368, guid: 19dc73f6e0a00be43a959498ddecc29a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1061,6 +1106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -12.06219
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555832378729434446, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7686001592471993236, guid: 19dc73f6e0a00be43a959498ddecc29a,
         type: 3}
@@ -1182,6 +1232,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.98024
       objectReference: {fileID: 0}
+    - target: {fileID: 8686920539301201540, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686920539301201540, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686920539301201541, guid: 19dc73f6e0a00be43a959498ddecc29a,
+        type: 3}
+      propertyPath: m_TagString
+      value: ThrowState
+      objectReference: {fileID: 0}
     - target: {fileID: 8694803253999962867, guid: 19dc73f6e0a00be43a959498ddecc29a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1272,6 +1337,19 @@ MonoBehaviour:
   shootPoint: {fileID: 682415597}
   shootInterval: 2
   projectileSpeed: 10
+--- !u!65 &682415604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682415598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &722835102
 GameObject:
   m_ObjectHideFlags: 0
