@@ -35,7 +35,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Run
       takeName: Run
-      internalID: 5522812681064789136
+      internalID: -6108441406275955455
       firstFrame: 0
       lastFrame: 13
       wrapMode: 0
@@ -64,7 +64,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Throw
       takeName: Throw
-      internalID: -6185155371445809522
+      internalID: 3500307339147761904
       firstFrame: 0
       lastFrame: 15
       wrapMode: 0
