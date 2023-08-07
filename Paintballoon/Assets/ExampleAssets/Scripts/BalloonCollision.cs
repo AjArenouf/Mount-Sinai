@@ -8,25 +8,15 @@ public class BalloonCollision : MonoBehaviour
 
     private bool isCheckingCollisions = false;
 
+    public CanvasElementFader canvasElementFader;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Collider")
         {
-            if (!isCheckingCollisions)
-            {
-                StartCoroutine(CheckingCollisions());
-            }
+            canvasElementFader.ResetElements();
         }
     }
 
-    IEnumerator CheckingCollisions()
-    {
-        isCheckingCollisions = true;
-
-        while (true)
-        {
-            canvasObject.SetActive(true);
-            yield return null;
-        }
-    }
+   
 }

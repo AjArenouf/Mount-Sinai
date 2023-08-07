@@ -15,7 +15,7 @@ public class ARFocusCircle : MonoBehaviour
 
     public GameObject placementIndicator;
 
-    private Image placementIndicatorImage; // Change 'Renderer' to 'Image'
+    private Image placementIndicatorImage; 
 
     private ARSessionOrigin arOrigin;
     private Pose placementPose;

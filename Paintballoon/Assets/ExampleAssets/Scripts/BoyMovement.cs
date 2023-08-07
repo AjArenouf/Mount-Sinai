@@ -18,6 +18,7 @@ public class BoyMovement : MonoBehaviour
     public Transform shootPoint;
     public GameObject arCamera;
 
+    private bool hasPlayerReachedPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,11 @@ public class BoyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hasPlayerReachedPoint)
+        {
+            return;
+        }
+
         float speed = 2f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
@@ -62,15 +67,21 @@ public class BoyMovement : MonoBehaviour
         if (other.gameObject.tag == "ThrowState")
         {
             animator.SetTrigger("isColliding");
-            Shoot();
-
-            Vector3 directionToCamera = cameraTransform.position - transform.position;
-            directionToCamera.y = 0;
-            Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
-            transform.rotation = targetRotation;
-           
-            
+            hasPlayerReachedPoint = true;
+            StartCoroutine(pauseAndLookAtPlayer());
         }
+    }
+
+    IEnumerator pauseAndLookAtPlayer()
+    {
+        Vector3 directionToCamera = cameraTransform.position - transform.position;
+        directionToCamera.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
+        transform.rotation = targetRotation;
+        Shoot();
+        yield return new WaitForSeconds(0.5f);
+        hasPlayerReachedPoint = false;
+        yield break;
     }
 
     private void Shoot()
