@@ -47,8 +47,16 @@ public class BoyMovement : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
-            animator.SetBool("isColliding", true);
+            
         }
     }
-  
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "ThrowState")
+        {
+            animator.SetTrigger("isColliding");
+            Debug.Log("Collision Success");
+        }
+    }
+ 
 }
