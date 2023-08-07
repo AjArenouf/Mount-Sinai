@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ButtonHandler : MonoBehaviour
 {
     public CanvasElementFader canvasElementFader;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,14 +18,9 @@ public class ButtonHandler : MonoBehaviour
     // Update is called once per frame
     private void OnButtonClicked()
     {
+        
         canvasElementFader.FadeElements();
-        StartCoroutine(ResetElements());
+        
     }
 
-    private IEnumerator ResetElements()
-    {
-        yield return new WaitForSeconds(canvasElementFader.fadeDuration);
-
-        canvasElementFader.ResetElements();
-    }
 }

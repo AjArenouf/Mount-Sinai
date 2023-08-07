@@ -2542,6 +2542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeDuration: 0.5
+  canvasToDeactivate: {fileID: 1969718965}
   imageToFade: {fileID: 1969718968}
   buttonToFade: {fileID: 1114591801}
   textToFade: {fileID: 1114591800}

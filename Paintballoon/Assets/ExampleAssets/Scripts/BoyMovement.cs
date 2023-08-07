@@ -31,7 +31,7 @@ public class BoyMovement : MonoBehaviour
     void Update()
     {
         
-        float speed = 1f;
+        float speed = 2f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
 
@@ -69,7 +69,7 @@ public class BoyMovement : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
             transform.rotation = targetRotation;
            
-            Debug.Log("Collision Success");
+            
         }
     }
 
