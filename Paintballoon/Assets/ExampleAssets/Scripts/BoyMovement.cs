@@ -10,7 +10,13 @@ public class BoyMovement : MonoBehaviour
     public Transform target4;
     private Transform currentTarget;
 
+    public Transform cameraTransform;
     Animator animator;
+  
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 10f;
+    public Transform shootPoint;
+    public GameObject arCamera;
 
 
     // Start is called before the first frame update
@@ -18,6 +24,7 @@ public class BoyMovement : MonoBehaviour
     {
         currentTarget = target;
         animator = GetComponent<Animator>();
+        arCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -55,8 +62,27 @@ public class BoyMovement : MonoBehaviour
         if (other.gameObject.tag == "ThrowState")
         {
             animator.SetTrigger("isColliding");
+            Shoot();
+
+            Vector3 directionToCamera = cameraTransform.position - transform.position;
+            directionToCamera.y = 0;
+            Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
+            transform.rotation = targetRotation;
+           
             Debug.Log("Collision Success");
         }
     }
- 
+
+    private void Shoot()
+    {
+        GameObject BoyBalloon = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+
+        Vector3 direction = (arCamera.transform.position - transform.position).normalized;
+
+        Rigidbody BoyBalloonRigidbody = BoyBalloon.GetComponent<Rigidbody>();
+        BoyBalloonRigidbody.velocity = direction * projectileSpeed;
+    }
+
 }
+
+

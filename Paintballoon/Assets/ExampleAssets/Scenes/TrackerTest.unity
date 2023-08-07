@@ -1307,6 +1307,12 @@ MonoBehaviour:
   target2: {fileID: 2005009869}
   target3: {fileID: 1396162818}
   target4: {fileID: 250141025}
+  cameraTransform: {fileID: 1583579614}
+  projectilePrefab: {fileID: 2532655997851178944, guid: 6631fad24709d1745a3e6fb741723549,
+    type: 3}
+  projectileSpeed: 10
+  shootPoint: {fileID: 682415597}
+  arCamera: {fileID: 1583579608}
 --- !u!114 &682415600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,23 +1326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 919018189}
---- !u!114 &682415601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682415598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074e585a234fe064f96440bdddc9b1f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2532655997851178944, guid: 6631fad24709d1745a3e6fb741723549,
-    type: 3}
-  shootPoint: {fileID: 682415597}
-  shootInterval: 2
-  projectileSpeed: 10
 --- !u!65 &682415604
 BoxCollider:
   m_ObjectHideFlags: 0
