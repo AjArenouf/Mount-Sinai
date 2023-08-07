@@ -27,11 +27,8 @@ public class ARFocusCircle : MonoBehaviour
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
 
-        placementIndicatorImage = placementIndicator.GetComponent<Image>(); // Assign Image instead of Renderer
-        if (placementIndicatorImage == null)
-        {
-            Debug.LogError("Placement indicator does not have an Image component.");
-        }
+        placementIndicatorImage = placementIndicator.GetComponent<Image>(); 
+      
         //scanText.SetActive(true);
         //placeText.SetActive(false);
     }
