@@ -1310,7 +1310,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 1583579614}
   projectilePrefab: {fileID: 2532655997851178944, guid: 6631fad24709d1745a3e6fb741723549,
     type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 12
   shootPoint: {fileID: 682415597}
   arCamera: {fileID: 1583579608}
 --- !u!114 &682415600

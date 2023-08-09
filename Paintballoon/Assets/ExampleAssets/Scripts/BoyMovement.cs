@@ -36,7 +36,7 @@ public class BoyMovement : MonoBehaviour
             return;
         }
 
-        float speed = 2f;
+        float speed = 3f;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, step);
 
