@@ -9,6 +9,7 @@ public class OpponentScoreCount : MonoBehaviour
 {
     int score;
     public TextMeshProUGUI scoreText;
+    public AudioSource splattSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class OpponentScoreCount : MonoBehaviour
         if (other.gameObject.tag == "Collider")
         {
             score++;
+
+            splattSound.Play();
 
             scoreText.text = "Opponent Score:" + score;
 
