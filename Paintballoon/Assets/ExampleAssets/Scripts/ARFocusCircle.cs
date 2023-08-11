@@ -77,7 +77,7 @@ public class ARFocusCircle : MonoBehaviour
 
     public void SpawnAllObjects()
     {
-        Debug.Log("Confirmed button press");
+        
         PlaceObject();
     }
 
