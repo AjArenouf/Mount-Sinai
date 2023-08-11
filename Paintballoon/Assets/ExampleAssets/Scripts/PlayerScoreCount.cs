@@ -10,6 +10,7 @@ public class PlayerScoreCount : MonoBehaviour
 {
     int score;
     public TextMeshProUGUI scoreText;
+    public AudioSource hitSound;
      
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class PlayerScoreCount : MonoBehaviour
     {
         if (other.gameObject.tag == "PlayerBall")
         {
+            hitSound.Play();
             score++;
 
             scoreText.text = "Your Score:" + score;
