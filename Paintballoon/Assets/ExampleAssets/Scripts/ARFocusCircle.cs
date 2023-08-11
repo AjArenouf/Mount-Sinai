@@ -50,7 +50,7 @@ public class ARFocusCircle : MonoBehaviour
 
     public void PlaceObject()
     {
-
+        
         object1.transform.position = placementPose.position;
         object1.transform.rotation = placementPose.rotation;
         object1.SetActive(true);
@@ -77,6 +77,7 @@ public class ARFocusCircle : MonoBehaviour
 
     public void SpawnAllObjects()
     {
+        Debug.Log("Confirmed button press");
         PlaceObject();
     }
 
